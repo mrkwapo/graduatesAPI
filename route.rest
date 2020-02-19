@@ -1,0 +1,22 @@
+GET http://localhost:3000/graduates
+
+###
+
+GET http://localhost:3000/graduates/5e4c9bf1db83651d44a66097
+
+###
+
+POST http://localhost:3000/graduates
+Content-Type: application/json
+
+{
+  "firstName": "John",
+  "lastName": "Smith",
+  "graduationYear": "11/2018",
+  "jobTitle": "Junior Developer",
+  "companyName": "eMoney",
+  "keySkills": "Java",
+  "gitHub": "www.github.com/jsmith",
+  "linkedIn": "www.linkedin/in/jsmith",
+  "twitter":"www.twitter.com/jsmith"
+}
