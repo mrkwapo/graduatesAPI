@@ -17,6 +17,6 @@ app.use(express.json());
 
 const graduatesRouter = require("./routes/graduates");
 
-app.use("/graduates", graduatesRouter);
+app.use("/api/graduates", graduatesRouter);
 
 app.listen(3000, () => console.log("Server Running..."));

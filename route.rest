@@ -1,22 +1,38 @@
-GET http://localhost:3000/graduates
+GET http://localhost:3000/api/graduates
 
 ###
 
-GET http://localhost:3000/graduates/5e4c9bf1db83651d44a66097
+GET http://localhost:3000/api/graduates/5e4c9bf1db83651d44a66097
 
 ###
 
-POST http://localhost:3000/graduates
+POST http://localhost:3000/api/graduates
 Content-Type: application/json
 
 {
-  "firstName": "John",
+  "firstName": "Anna",
   "lastName": "Smith",
-  "graduationYear": "11/2018",
+  "graduationYear": "12/2019",
   "jobTitle": "Junior Developer",
-  "companyName": "eMoney",
+  "companyName": "Virgin Pulse",
   "keySkills": "Java",
-  "gitHub": "www.github.com/jsmith",
-  "linkedIn": "www.linkedin/in/jsmith",
-  "twitter":"www.twitter.com/jsmith"
+  "gitHub": "www.github.com/asmith",
+  "linkedIn": "www.linkedin/in/asmith",
+  "twitter":"www.twitter.com/asmith"
+}
+
+
+###
+
+
+DELETE http://localhost:3000/api/graduates/5e4c9bf1db83651d44a66097
+
+
+###
+
+PATCH  http://localhost:3000/api/graduates/5e4df01bda803f160468f396
+Content-Type: application/json
+
+{
+  "firstName": "Jonathan"
 }

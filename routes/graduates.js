@@ -39,12 +39,51 @@ router.post("/", async (req, res) => {
 });
 
 //Updating one graduate
-router.patch("/:id", getGraduate, (req, res) => {
-  //
+router.patch("/:id", getGraduate, async (req, res) => {
+  if (req.body.firstName != null) {
+    res.graduate.firstName = req.body.firstName;
+  }
+  if (req.body.lastName != null) {
+    res.graduate.lastName = req.body.lastName;
+  }
+  if (req.body.graduationYear != null) {
+    res.graduate.graduationYear = req.body.graduationYear;
+  }
+  if (req.body.jobTitle != null) {
+    res.graduate.jobTitle = req.body.jobTitle;
+  }
+  if (req.body.companyName != null) {
+    res.graduate.companyName = req.body.companyName;
+  }
+  if (req.body.keySkills != null) {
+    res.graduate.keySkills = req.body.keySkills;
+  }
+  if (req.body.gitHub != null) {
+    res.graduate.gitHub = req.body.gitHub;
+  }
+  if (req.body.linkedIn != null) {
+    res.graduate.linkedIn = req.body.linkedIn;
+  }
+  if (req.body.twitter != null) {
+    res.graduate.twitter = req.body.twitter;
+  }
+
+  try {
+    const updatedGraduate = await res.graduate.save();
+    res.json(updatedGraduate);
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
 });
+
 //Deleting one graduate
-router.delete("/:id", getGraduate, (req, res) => {
-  //
+router.delete("/:id", getGraduate, async (req, res) => {
+  try {
+    await res.graduate.remove();
+    res.json({ message: "Deleted graduate" });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
 });
 
 async function getGraduate(req, res, next) {
@@ -61,3 +100,5 @@ async function getGraduate(req, res, next) {
   next();
 }
 module.exports = router;
+
+//
