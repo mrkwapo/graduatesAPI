@@ -30,9 +30,42 @@ const getAllGraduates = () => {
   sendHttpRequest("GET", "http://localhost:3000/api/graduates").then(
     responseData => {
       console.log(responseData);
-      document.getElementById("results").innerHTML = JSON.stringify(
-        responseData
-      );
+
+      const listItems = responseData.map(element => {
+        return (
+          "<li>" +
+          "First Name: " +
+          element.firstName +
+          " , " +
+          "Last Name: " +
+          element.lastName +
+          " , " +
+          "Graduation (MM/YYYY): " +
+          element.graduationYear +
+          " , " +
+          "Job Title: " +
+          element.jobTitle +
+          " , " +
+          "Company Name: " +
+          element.companyName +
+          " , " +
+          "Key Skills: " +
+          element.keySkills +
+          " , " +
+          "Github: " +
+          element.gitHub +
+          " , " +
+          "LinkedIn: " +
+          element.linkedIn +
+          " , " +
+          "Twitter: " +
+          element.twitter +
+          "</li>"
+        );
+      });
+
+      document.getElementById("results").innerHTML =
+        "<ul>" + listItems.join("\n") + "</ul>";
     }
   );
 };
