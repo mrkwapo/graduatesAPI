@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Graduate API</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <h1>Graduate API</h1>
+    <div class="container">
+      <form>
+        <h2>Create a Graduate</h2>
+        <label for="firstName">First Name:</label>
+        <input
+          type="text"
+          id="firstName"
+          name="firstName"
+          placeholder="First Name"
+        />
+        <br />
+        <label for="lastName">Last Name:</label>
+        <input
+          type="text"
+          id="lastName"
+          name="lastName"
+          placeholder="Last name"
+        />
+        <br />
+        <label for="graduationYear">Graduation:</label>
+        <input
+          type="text"
+          id="graduationYear"
+          name="graduationYear"
+          placeholder="e.g. 8/2019"
+        />
+        <br />
+        <label for="jobTitle">Job Title:</label>
+        <input
+          type="text"
+          id="jobTitle"
+          name="jobTitle"
+          placeholder="Job title"
+        />
+        <br />
+        <label for="companyName">Company:</label>
+        <input
+          type="text"
+          id="companyName"
+          name="companyName"
+          placeholder="Company Name"
+        />
+        <br />
+        <label for="keySkills">Skills:</label>
+        <input
+          type="text"
+          id="keySkills"
+          name="keySkills"
+          placeholder="e.g. MongoDB, Express, XHR"
+        />
+        <br />
+        <label for="gitHub">Github:</label>
+        <input
+          type="text"
+          id="gitHub"
+          name="gitHub"
+          placeholder="Github profile Link"
+        />
+        <br />
+        <label for="linkedIn">LinkedIn:</label>
+        <input
+          type="text"
+          id="linkedIn"
+          name="linkedIn"
+          placeholder="LinkedIn profile Link"
+        />
+        <br />
+        <label for="twitter">Twitter:</label>
+        <input
+          type="text"
+          id="twitter"
+          name="twitter"
+          placeholder="Twitter profile Link"
+        />
+        <br />
+        <button
+          type="submit"
+          id="post-btn"
+          onclick="createNewGraduate()"
+          value="submit"
+        >
+          Click me
+        </button>
+
+        <div id="registered"></div>
+      </form>
+      <h2>Find a Graduate</h2>
+      <form class="example">
+        <input type="text" placeholder="Search.." name="search" />
+        <button type="submit">Search</button>
+      </form>
+      <h2>Show All Graduates</h2>
+      <button type="submit" id="get-btn" onclick="getAllGraduates()">
+        Click me
+      </button>
+      <div id="results"></div>
+    </div>
+  </body>
+</html>

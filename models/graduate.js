@@ -22,7 +22,7 @@ const graduateSchema = new mongoose.Schema({
     required: true
   },
   keySkills: {
-    type: [String],
+    type: String,
     required: true
   },
   gitHub: {
